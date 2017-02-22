@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0820BD9A1E5E2A4700A7E4A4 /* XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0820BD991E5E2A4700A7E4A4 /* XML.swift */; };
 		08EF810B1E5E23920090547C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF810A1E5E23920090547C /* AppDelegate.swift */; };
 		08EF810D1E5E23920090547C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF810C1E5E23920090547C /* ViewController.swift */; };
 		08EF81101E5E23920090547C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EF810E1E5E23920090547C /* Main.storyboard */; };
 		08EF81121E5E23920090547C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08EF81111E5E23920090547C /* Assets.xcassets */; };
 		08EF81151E5E23920090547C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08EF81131E5E23920090547C /* LaunchScreen.storyboard */; };
+		228C187367A719C050625D11 /* Pods_uusIlm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609452910B48FE33FCED6B53 /* Pods_uusIlm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0820BD991E5E2A4700A7E4A4 /* XML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XML.swift; sourceTree = "<group>"; };
 		08EF81071E5E23920090547C /* uusIlm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uusIlm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08EF810A1E5E23920090547C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08EF810C1E5E23920090547C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		08EF81111E5E23920090547C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08EF81141E5E23920090547C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08EF81161E5E23920090547C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		609452910B48FE33FCED6B53 /* Pods_uusIlm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uusIlm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CED20FF9371AE777BCB4F81 /* Pods-uusIlm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uusIlm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uusIlm/Pods-uusIlm.debug.xcconfig"; sourceTree = "<group>"; };
+		F7F166FD8FB85ECDB35FBED5 /* Pods-uusIlm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uusIlm.release.xcconfig"; path = "Pods/Target Support Files/Pods-uusIlm/Pods-uusIlm.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228C187367A719C050625D11 /* Pods_uusIlm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				08EF81091E5E23920090547C /* uusIlm */,
 				08EF81081E5E23920090547C /* Products */,
+				0E92DF8802D40DC70F423480 /* Pods */,
+				E035DF003948E783292541B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +65,30 @@
 			children = (
 				08EF810A1E5E23920090547C /* AppDelegate.swift */,
 				08EF810C1E5E23920090547C /* ViewController.swift */,
+				0820BD991E5E2A4700A7E4A4 /* XML.swift */,
 				08EF810E1E5E23920090547C /* Main.storyboard */,
 				08EF81111E5E23920090547C /* Assets.xcassets */,
 				08EF81131E5E23920090547C /* LaunchScreen.storyboard */,
 				08EF81161E5E23920090547C /* Info.plist */,
 			);
 			path = uusIlm;
+			sourceTree = "<group>";
+		};
+		0E92DF8802D40DC70F423480 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CED20FF9371AE777BCB4F81 /* Pods-uusIlm.debug.xcconfig */,
+				F7F166FD8FB85ECDB35FBED5 /* Pods-uusIlm.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E035DF003948E783292541B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				609452910B48FE33FCED6B53 /* Pods_uusIlm.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08EF81191E5E23920090547C /* Build configuration list for PBXNativeTarget "uusIlm" */;
 			buildPhases = (
+				AF49570D2762C5247BF6A4F9 /* [CP] Check Pods Manifest.lock */,
 				08EF81031E5E23920090547C /* Sources */,
 				08EF81041E5E23920090547C /* Frameworks */,
 				08EF81051E5E23920090547C /* Resources */,
+				D9798E974391B603A24D7B91 /* [CP] Embed Pods Frameworks */,
+				EEBE08562F9D7421695B8C13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +161,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AF49570D2762C5247BF6A4F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9798E974391B603A24D7B91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uusIlm/Pods-uusIlm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEBE08562F9D7421695B8C13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uusIlm/Pods-uusIlm-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		08EF81031E5E23920090547C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				08EF810D1E5E23920090547C /* ViewController.swift in Sources */,
+				0820BD9A1E5E2A4700A7E4A4 /* XML.swift in Sources */,
 				08EF810B1E5E23920090547C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +335,7 @@
 		};
 		08EF811A1E5E23920090547C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CED20FF9371AE777BCB4F81 /* Pods-uusIlm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = uusIlm/Info.plist;
@@ -268,6 +348,7 @@
 		};
 		08EF811B1E5E23920090547C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7F166FD8FB85ECDB35FBED5 /* Pods-uusIlm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = uusIlm/Info.plist;
@@ -297,6 +378,7 @@
 				08EF811B1E5E23920090547C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
