@@ -24,7 +24,8 @@ class ViewController: UIViewController {
             //let xmltest = SWXMLHash.parse(response.result.value!)
             let xmltest = SWXMLHash.parse(response.data!)
             
-            print(xmltest["day"] )
+            var kp = "2017-02-23"
+            print(xmltest["forecasts"]["forecast"]["forecast date=\(kp)"])
             print(type(of: xmltest))
             
         }
