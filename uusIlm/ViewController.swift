@@ -18,14 +18,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         Alamofire.request("https://www.ilmateenistus.ee/ilma_andmed/xml/forecast.php").responseString { response in
-            // print response as string for debugging, testing, etc.
-            //print(response.result.value)
-            //print(response.result.error)
-            //let xmltest = SWXMLHash.parse(response.result.value!)
             let xmltest = SWXMLHash.parse(response.data!)
-            
-            var kp = "2017-02-23"
-            print(xmltest["forecasts"]["forecast"]["forecast date=\(kp)"])
+            //kuupäevi saab muuta [0] nendes sulgudes
+            print(xmltest["forecasts"]["forecast"][1]["night"])
             print(type(of: xmltest))
             
         }
