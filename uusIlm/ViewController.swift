@@ -35,11 +35,12 @@ class ViewController: UIViewController {
             ilm.tempMax_night = Int(xmltest["forecasts"]["forecast"][0]["night"]["tempmax"].element!.text!)!
             ilm.ilmTekst_night = xmltest["forecasts"]["forecast"][0]["night"]["text"].element!.text!
             
-            var rida_min = [Int]()
-            for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {rida_min.append(Int( elem["speedmin"].element!.text! )!) }
-            var rida_min = [Int]()
-            for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {rida_min.append(Int( elem["speedmin"].element!.text! )!) }
-            print(rida_min.max()!)
+           
+            for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_min.append(Int( elem["speedmin"].element!.text! )!) }
+          
+            for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_max.append(Int(elem["speedmax"].element!.text! )!) }
+            print(ilm.rida_max.max()!)
+            print(ilm.rida_max.min()!)
                 //!.allAttributes)
             //print(type(of: xmltest))
             //ilm.ilmTekst_night = xmltest["forecasts"]["forecast"][0]["day"]["text"].element!.text!
