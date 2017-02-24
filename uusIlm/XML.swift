@@ -8,8 +8,26 @@
 
 import UIKit
 import Alamofire
+import SWXMLHash
 
-class XML: NSObject {
+
+class ilmaAndmed: NSObject {
     
-
+    var weatherDict: [String] = ["null", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist", "kaksteist", "kolmteist", "neliteist", "viisteist", "kuusteist", "seitseteist", "kaheksateist", "üheksateist", "kakskümmend"]
+    var tempMin_day = Int()
+    var tempMax_day = Int()
+    var ilmTekst_day = String()
+    var windMin_day = Int()
+    var windMax_day = Int()
+    var ilmKuupaev = Date()
+    var rida_min = [Int]()
+    var rida_max = [Int]()
+    
+    var tempMin_night = Int()
+    var tempMax_night = Int()
+    var ilmTekst_night = String()
+    var windMin_night = Int()
+    var windMax_night = Int()
+    
 }
+

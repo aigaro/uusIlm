@@ -10,9 +10,14 @@ import UIKit
 import Alamofire
 import SWXMLHash
 
+var ilm = ilmaAndmed()
+
+
 
 
 class ViewController: UIViewController {
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +25,28 @@ class ViewController: UIViewController {
         Alamofire.request("https://www.ilmateenistus.ee/ilma_andmed/xml/forecast.php").responseString { response in
             let xmltest = SWXMLHash.parse(response.data!)
             //kuupäevi saab muuta [0] nendes sulgudes
-            print(xmltest["forecasts"]["forecast"][1]["night"])
-            print(type(of: xmltest))
+            
+            
+            ilm.tempMin_day = Int(xmltest["forecasts"]["forecast"][0]["day"]["tempmin"].element!.text!)!
+            ilm.tempMax_day = Int(xmltest["forecasts"]["forecast"][0]["day"]["tempmax"].element!.text!)!
+            ilm.ilmTekst_day = xmltest["forecasts"]["forecast"][0]["day"]["text"].element!.text!
+            
+            ilm.tempMin_night = Int(xmltest["forecasts"]["forecast"][0]["night"]["tempmin"].element!.text!)!
+            ilm.tempMax_night = Int(xmltest["forecasts"]["forecast"][0]["night"]["tempmax"].element!.text!)!
+            ilm.ilmTekst_night = xmltest["forecasts"]["forecast"][0]["night"]["text"].element!.text!
+            
+            var rida_min = [Int]()
+            for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {rida_min.append(Int( elem["speedmin"].element!.text! )!) }
+            var rida_min = [Int]()
+            for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {rida_min.append(Int( elem["speedmin"].element!.text! )!) }
+            print(rida_min.max()!)
+                //!.allAttributes)
+            //print(type(of: xmltest))
+            //ilm.ilmTekst_night = xmltest["forecasts"]["forecast"][0]["day"]["text"].element!.text!
+            //print(xmltest["forecasts"]["forecast"][0]["day"]["text"].element!.text)
+            //print(type(of: ilm.ilmTekst_night))
+           //
+            
             
         }
             //var xmltest = SWXMLHash.parse(response.data!)
