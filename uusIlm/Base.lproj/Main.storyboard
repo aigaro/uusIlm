@@ -65,6 +65,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSu-pN-6ve">
+                                <rect key="frame" x="27" y="253" width="343" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description_Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlC-DM-iyo">
                                 <rect key="frame" x="16" y="304" width="343" height="150"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -108,6 +115,7 @@
                         <outlet property="Description_Night" destination="yMP-CZ-ILF" id="4zU-sD-7Qf"/>
                         <outlet property="Night_Temp" destination="Y7c-CP-X1c" id="ENG-Q7-cm4"/>
                         <outlet property="Night_Text" destination="7Mk-0t-hTl" id="YbM-pR-hVO"/>
+                        <outlet property="Wind_Range" destination="rSu-pN-6ve" id="HKz-s8-fmC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
