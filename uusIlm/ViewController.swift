@@ -27,6 +27,7 @@ class ViewController: UIViewController {
             //kuupäevi saab muuta [0] nendes sulgudes
             
             
+            
             ilm.tempMin_day = Int(xmltest["forecasts"]["forecast"][0]["day"]["tempmin"].element!.text!)!
             ilm.tempMax_day = Int(xmltest["forecasts"]["forecast"][0]["day"]["tempmax"].element!.text!)!
             ilm.ilmTekst_day = xmltest["forecasts"]["forecast"][0]["day"]["text"].element!.text!
@@ -41,6 +42,11 @@ class ViewController: UIViewController {
             ilm.weather_date.append(xmltest["forecasts"]["forecast"][i].element!.attribute(by: "date")!.text)
             }
             print(ilm.weather_date[0])
+            
+            self.Date_1_Button.setTitle(ilm.weather_date[0], for: .normal)
+            self.Date_2_Button.setTitle(ilm.weather_date[1], for: .normal)
+            self.Date_3_Button.setTitle(ilm.weather_date[2], for: .normal)
+            self.Date_4_Button.setTitle(ilm.weather_date[3], for: .normal)
             
            
             for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_min.append(Int( elem["speedmin"].element!.text! )!) }          
@@ -115,7 +121,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var Description_Day: UILabel!
     @IBOutlet weak var Description_Night: UILabel!
     @IBOutlet weak var Wind_Range: UILabel!
+    @IBOutlet weak var Date_1_Button: UIButton!
+    @IBOutlet weak var Date_2_Button: UIButton!
+    @IBOutlet weak var Date_3_Button: UIButton!
+    @IBOutlet weak var Date_4_Button: UIButton!
     
+    @IBAction func Nupuvajutus(_ sender: UIButton) {
+        var kuupaev = Int()
+        switch sender.tag {
+        case 0:
+            kuupaev = 0
+        case 1:
+            kuupaev = 1
+        case 2:
+            kuupaev = 2
+        case 3:
+            kuupaev = 3
+        default:
+            break
+        }
+    }
    
 
 
