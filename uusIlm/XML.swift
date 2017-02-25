@@ -29,5 +29,6 @@ class ilmaAndmed: NSObject {
     var windMin_night = Int()
     var windMax_night = Int()
     
+    
 }
 
