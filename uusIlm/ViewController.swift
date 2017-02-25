@@ -29,11 +29,11 @@ class ViewController: UIViewController {
         Alamofire.request("https://www.ilmateenistus.ee/ilma_andmed/xml/forecast.php").responseString { response in
             let xmltest = SWXMLHash.parse(response.data!)
             //kuupäevi saab muuta [0] nendes sulgudes
-
+            // var kuupaev muudab Int, aga miskipärast veel ei värskenda
             
-            ilm.tempMin_day = Int(xmltest["forecasts"]["forecast"][1]["day"]["tempmin"].element!.text!)!
-            ilm.tempMax_day = Int(xmltest["forecasts"]["forecast"][1]["day"]["tempmax"].element!.text!)!
-            ilm.ilmTekst_day = xmltest["forecasts"]["forecast"][1]["day"]["text"].element!.text!
+            ilm.tempMin_day = Int(xmltest["forecasts"]["forecast"][0]["day"]["tempmin"].element!.text!)!
+            ilm.tempMax_day = Int(xmltest["forecasts"]["forecast"][0]["day"]["tempmax"].element!.text!)!
+            ilm.ilmTekst_day = xmltest["forecasts"]["forecast"][0]["day"]["text"].element!.text!
             
             ilm.tempMin_night = Int(xmltest["forecasts"]["forecast"][0]["night"]["tempmin"].element!.text!)!
             ilm.tempMax_night = Int(xmltest["forecasts"]["forecast"][0]["night"]["tempmax"].element!.text!)!
