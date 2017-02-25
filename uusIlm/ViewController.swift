@@ -35,6 +35,8 @@ class ViewController: UIViewController {
             ilm.tempMax_night = Int(xmltest["forecasts"]["forecast"][0]["night"]["tempmax"].element!.text!)!
             ilm.ilmTekst_night = xmltest["forecasts"]["forecast"][0]["night"]["text"].element!.text!
             
+           // print(xmltest["forecasts"]["forecast"][0].element?.attribute(by: "date")?.text)
+            
            
             for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_min.append(Int( elem["speedmin"].element!.text! )!) }          
             for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_max.append(Int(elem["speedmax"].element!.text! )!) }
@@ -50,7 +52,14 @@ class ViewController: UIViewController {
             case 0:
                 self.Day_Text.text = "Külma on miinus \(ilm.weatherDict[ilm.tempMin_day*(-1)]) kuni \(ilm.weatherDict[ilm.tempMax_day]) kraadi"
             case 1...100:
-                self.Day_Text.text = "Sooja on \(ilm.weatherDict[ilm.tempMin_day]) kuni \(ilm.weatherDict[ilm.tempMax_day]) kraadi"
+                switch Int(ilm.tempMin_day) {
+                case -100...0:
+                    self.Day_Text.text = "Külma on miinus \(ilm.weatherDict[abs(ilm.tempMin_day)]) kuni pluss \(ilm.weatherDict[ilm.tempMax_day]) kraadi"
+                case 0...100:
+                    self.Day_Text.text = "Sooja on \(ilm.weatherDict[abs(ilm.tempMin_day)]) kuni \(ilm.weatherDict[ilm.tempMax_day]) kraadi"
+                default:
+                    print("Ilm")
+                }
             default:
                 print("Ilm")
                 
@@ -62,7 +71,14 @@ class ViewController: UIViewController {
             case 0:
                 self.Night_Text.text = "Külma on miinus \(ilm.weatherDict[ilm.tempMin_night*(-1)]) kuni \(ilm.weatherDict[ilm.tempMax_night]) kraadi"
             case 1...100:
-                self.Night_Text.text = "Sooja on \(ilm.weatherDict[ilm.tempMin_night]) kuni \(ilm.weatherDict[ilm.tempMax_night]) kraadi"
+                switch Int(ilm.tempMin_night) {
+                case -100...0:
+                    self.Night_Text.text = "Külma on miinus \(ilm.weatherDict[abs(ilm.tempMin_night)]) kuni pluss \(ilm.weatherDict[ilm.tempMax_night]) kraadi"
+                case 0...100:
+                    self.Night_Text.text = "Sooja on \(ilm.weatherDict[ilm.tempMin_night]) kuni \(ilm.weatherDict[ilm.tempMax_night]) kraadi"
+                default:
+                    print("Ilm")
+                }
             default:
                 print("Ilm")
                 
@@ -74,7 +90,7 @@ class ViewController: UIViewController {
             
             
         }
-            
+        
         
         
         
