@@ -29,7 +29,8 @@ class ilmaAndmed: NSObject {
     var windMin_night = Int()
     var windMax_night = Int()
     
-    var weather_date = Date()
+    var weather_date = [String]()
+    var chosen_date = Date()
     
     
     
