@@ -40,9 +40,37 @@ class ViewController: UIViewController {
           
             for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_max.append(Int(elem["speedmax"].element!.text! )!) }
             
-            self.Day_Temp.text = "Päev \(ilm.tempMin_day) to \(ilm.tempMax_day) C"
-            self.Night_Temp.text = "Öö \(ilm.tempMin_night) to \(ilm.tempMax_night) C"
-            self.Day_Text = 
+            self.Day_Temp.text = "Päev \(ilm.tempMin_day) to \(ilm.tempMax_day) °C"
+            self.Night_Temp.text = "Öö \(ilm.tempMin_night) to \(ilm.tempMax_night) °C"
+            
+            switch Int(ilm.tempMax_day) {
+            case -100 ... -1:
+                self.Day_Text.text = "Külma on miinus\(ilm.weatherDict[ilm.tempMin_day*(-1)]) kuni \(ilm.weatherDict[ilm.tempMax_day*(-1)]) kraadi"
+            case 0:
+                self.Day_Text.text = "Null kraadi"
+            case 1...100:
+                self.Day_Text.text = "Sooja on \(ilm.weatherDict[ilm.tempMin_day]) kuni \(ilm.weatherDict[ilm.tempMax_day]) kraadi"
+            default:
+                print("Ilm")
+                
+            }
+            
+            switch Int(ilm.tempMax_night) {
+            case -100 ... -1:
+                self.Night_Text.text = "Külma on miinus \(ilm.weatherDict[ilm.tempMin_night*(-1)]) kuni \(ilm.weatherDict[ilm.tempMax_night*(-1)]) kraadi"
+            case 0:
+                self.Night_Text.text = "Null kraadi"
+            case 1...100:
+                self.Night_Text.text = "Sooja on \(ilm.weatherDict[ilm.tempMin_night]) kuni \(ilm.weatherDict[ilm.tempMax_night]) kraadi"
+            default:
+                print("Ilm")
+                
+            }
+            
+            self.Description_Day.text = "Päev. \(ilm.ilmTekst_day)"
+            self.Description_Night.text = "Öö. \(ilm.ilmTekst_night)"
+            
+            
             //print(ilm.rida_max.max()!)
             //print(ilm.rida_max.min()!)
                 //!.allAttributes)
@@ -71,6 +99,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var Night_Temp: UILabel!
     @IBOutlet weak var Day_Text: UILabel!
     @IBOutlet weak var Night_Text: UILabel!
+    @IBOutlet weak var Description_Day: UILabel!
+    @IBOutlet weak var Description_Night: UILabel!
 
 
 }
