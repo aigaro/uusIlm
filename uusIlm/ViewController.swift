@@ -131,6 +131,12 @@ class ViewController: UIViewController {
             self.Description_Day.text = "Päev. \(ilm.ilmTekst_day)"
             self.Description_Night.text = "Öö. \(ilm.ilmTekst_night)"
     }
+        
+        for button in [Date_1_Button, Date_2_Button, Date_3_Button, Date_4_Button] {
+            button?.layer.borderWidth = 1
+            button?.layer.borderColor = UIColor.lightGray.cgColor
+                   }
+        
     }
    
 
