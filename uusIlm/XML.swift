@@ -32,7 +32,7 @@ class ilmaAndmed: NSObject {
     var weather_date = [String]()
     var chosen_date = Date()
     
-    
+
     
 }
 
