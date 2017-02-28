@@ -16,10 +16,6 @@ var kuupaev = 0
 
 
 class ViewController: UIViewController {
-    
-
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +83,7 @@ class ViewController: UIViewController {
             for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_min.append(Int( elem["speedmin"].element!.text! )!) }
             for elem in xmltest["forecasts"]["forecast"][0]["day"]["wind"] {ilm.rida_max.append(Int(elem["speedmax"].element!.text! )!) }
             
-            self.Wind_Range.text = "Tuule kiirus päeval on \(ilm.rida_min.max()!) kuni \(ilm.rida_max.max()!) m/s"
+            self.Wind_Range.text = "Tuule kiirus tänasel päeval on \(ilm.rida_min.max()!) kuni \(ilm.rida_max.max()!) m/s"
             
             self.Day_Temp.text = "Päev \(ilm.tempMin_day) to \(ilm.tempMax_day) °C"
             self.Night_Temp.text = "Öö \(ilm.tempMin_night) to \(ilm.tempMax_night) °C"
@@ -136,6 +132,12 @@ class ViewController: UIViewController {
             button?.layer.borderWidth = 1
             button?.layer.borderColor = UIColor.lightGray.cgColor
                    }
+        
+        for layer in [Day_Temp, Night_Temp, Day_Text, Night_Text, Description_Day, Description_Night, Wind_Range] {
+            layer?.layer.borderWidth = 1
+            
+        }
+        
         
     }
    

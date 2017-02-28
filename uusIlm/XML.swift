@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-import SWXMLHash
 
-
-class ilmaAndmed: NSObject {
+struct ilmaAndmed {
     
     var weatherDict: [String] = ["null", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist", "kaksteist", "kolmteist", "neliteist", "viisteist", "kuusteist", "seitseteist", "kaheksateist", "üheksateist", "kakskümmend", "kakskümmend üks", "kakskümmend kaks", "kakskümmend kolm", "kakskümmend neli", "kakskümmend viis", "kakskümmend kuus", "kakskümmend seitse", "kakskümmend kaheksa", "kakskümmend üheksa", "kolmkümmend"]
     var tempMin_day = Int()
