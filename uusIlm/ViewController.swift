@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherData()
+        Date_1_Button.layer.backgroundColor = UIColor.lightGray.cgColor
         }
     
     override func didReceiveMemoryWarning() {
@@ -44,16 +45,31 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0:
             kuupaev = 0
+            reset_bg_color()
+            //button?.layer.borderColor = UIColor.lightGray.cgColor
+            Date_1_Button.layer.backgroundColor = UIColor.lightGray.cgColor
         case 1:
             kuupaev = 1
+            reset_bg_color()
+            Date_2_Button.layer.backgroundColor = UIColor.lightGray.cgColor
         case 2:
             kuupaev = 2
+            reset_bg_color()
+            Date_3_Button.layer.backgroundColor = UIColor.lightGray.cgColor
         case 3:
             kuupaev = 3
+            reset_bg_color()
+            Date_4_Button.layer.backgroundColor = UIColor.lightGray.cgColor
         default:
             return
         }
         weatherData()
+    }
+    
+    func reset_bg_color() {
+        for button_bg in [Date_1_Button, Date_2_Button, Date_3_Button, Date_4_Button] {
+            button_bg?.layer.backgroundColor = nil
+        }
     }
     
     func weatherData() {
@@ -68,8 +84,6 @@ class ViewController: UIViewController {
             ilm.tempMin_night = Int(xmltest["forecasts"]["forecast"][kuupaev]["night"]["tempmin"].element!.text!)!
             ilm.tempMax_night = Int(xmltest["forecasts"]["forecast"][kuupaev]["night"]["tempmax"].element!.text!)!
             ilm.ilmTekst_night = xmltest["forecasts"]["forecast"][kuupaev]["night"]["text"].element!.text!
-            
-            print(xmltest["forecasts"]["forecast"][kuupaev].element!.attribute(by: "date")!.text)
             
             for i in 0...3 {
                 ilm.weather_date.append(xmltest["forecasts"]["forecast"][i].element!.attribute(by: "date")!.text)
